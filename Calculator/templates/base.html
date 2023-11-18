@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Addition</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+    <h2>Add Two Numbers</h2>
+    <form method="post" action="{% url 'Home' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+
+    {% if result %}
+        <h2>Result</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+
+
+
+</body>
+</html>
